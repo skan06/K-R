@@ -36,7 +36,7 @@ export const getOne=(id)=> async (dispatch)=>{
 //add car (admin & carowner)
 export const addCar=(newCar)=>async (dispatch)=>{
     try {
-        await axios.post("/api/cars/addcar",newCar)
+        let result=await axios.post("/api/cars/addcar",newCar)
         dispatch({
             type:ADD_CAR,
             payload:result.data,
@@ -51,7 +51,7 @@ export const addCar=(newCar)=>async (dispatch)=>{
 //edit car (admin & carowner)
 export const editCar=(id,newCar)=>async(dispatch)=>{
     try {
-        await axios.put(`/api/cars/updatecar/${id}`,newCar)
+        let result=await axios.put(`/api/cars/updatecar/${id}`,newCar)
         dispatch(getOne(id),
         {
         type:EDIT_CAR,
@@ -67,15 +67,15 @@ export const editCar=(id,newCar)=>async(dispatch)=>{
 //delete car (admin)
 export const deleteCar=(id)=> async (dispatch)=>{
     try {
-        await axios.delete(`/api/cars/deletecar/${id}`)
-        dispatch(getContacts(),
+        let result=await axios.delete(`/api/cars/deletecar/${id}`)
+        dispatch(getCars(),
         {
             type:DELETE_CAR,
             payload:result.data
         })
     } catch (error) {
         dispatch({
-            type:FAIL_CONTACT,
+            type:FAIL_CAR,
             payload:error.response
         })
     }

@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { userReducer } from "./UserReducer"; 
-import {getcarReducer,multirolesReducer} from "./CarsReducer"
+import {getcarReducer} from "./CarsReducer"
 
 
-export const rootReducer=combineReducers({userReducer,getcarReducer,multirolesReducer})
+export const rootReducer=combineReducers({userReducer,getcarReducer})

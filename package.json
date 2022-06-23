@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "back": "nodemon server.js",
-    "front":"cd client && npm start",
+    "front": "cd client && npm start",
     "start": "concurrently \"npm run back\" \"npm run front\""
   },
   "keywords": [],
@@ -18,7 +18,8 @@
     "express": "^4.18.1",
     "express-validator": "^6.14.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.3.8"
+    "mongoose": "^6.3.8",
+    "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
     "dotenv": "^16.0.1",

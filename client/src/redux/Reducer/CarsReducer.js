@@ -18,18 +18,6 @@ export const getcarReducer=(state=initialState,{type,payload})=>{
             return {...state,carslist:payload.carslist,load:false,isAuth:true};
         case GET_ONE_CAR:
             return {...state,carToGet:payload.carToGet,load:false,isAuth:true};
-        case FAIL_CAR:
-            return {...state,load:false,error:payload};
-    
-        default:
-            return state;
-    }
-}
-//multiroles (admin/carowner)
-export const multirolesReducer=(state=initialState,{type,payload})=>{
-    switch (type) {
-        case LOAD_CAR:
-            return {...state,load:true,isAuth:true};
         case ADD_CAR:
             return {...state,carslist:payload.carslist,load:false,isAuth:true,isAdmin:true,isCarOwner:true};
         case EDIT_CAR:
@@ -43,3 +31,5 @@ export const multirolesReducer=(state=initialState,{type,payload})=>{
             return state;
     }
 }
+
+
